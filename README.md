@@ -5,7 +5,7 @@
 
 - **Technologies/Platforms Used**
 	- _Tensorflow_
-	- _Tensorflow Serving_
+	- _Tensorflow Serving API_
 	- _Using ***Backend*** as Django Framework_
 	- _Front end using HTML/CSS/BS4_
 
