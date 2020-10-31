@@ -21,7 +21,6 @@ c_neu = 0
 def continue_session():
     phyVsmental()
 
-    
     for i in range(7):
         normal_Que()
         reply = str(input())
@@ -33,6 +32,6 @@ def continue_session():
             c_pos+=1
     
     if (c_neg>=4):
-        li8_depr()
+        music_enq()
     else:
         print("Okay ! you seem to be fine ... Focus on your work , okay ? Sleep properly and Take rest properly..Bye...")
