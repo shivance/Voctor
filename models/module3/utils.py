@@ -34,6 +34,11 @@ def positiveReply():
     "Good to hear !",
     "Wonderful",
     "Awesome."
+    "I'm glad to hear that.",
+    "Oh happy day !",
+    "That's so good to hear !",
+    "That is so great !",
+    "Waah !"
     ]
 
     return random.choice(ls)
