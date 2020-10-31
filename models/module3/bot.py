@@ -1,7 +1,7 @@
 from random import random
 from utils import *
 from senti import sentiment
-
+import webbrowser as wb
 
 def start_session():
     wlcm_txt = welcome()
@@ -19,6 +19,9 @@ c_pos = 0
 c_neu = 0
 
 def continue_session():
+    phyVsmental()
+
+    
     for i in range(7):
         normal_Que()
         reply = str(input())

@@ -2,7 +2,7 @@
 
 import random
 from senti import sentiment
-
+import webbrowser as wb
 # front page of whole project will start here
 
 
@@ -69,22 +69,29 @@ def phyVsmental():
     print("Reply with Yes or no :) ")
     s = s.lower()
     if (s == "yes")
-    # physical site direct
-    else:
-        depressionEnq()
+        #redirect to virtual health examiner
+        #wb.open("")
+    
 
 def normalQue():
     ls = [
         "What do you like to do on weekends?",
-
+        "Had lunch ?"
     ]
 
-def li8_depr():
+
+def dprsnActive():
+    print("You can talk don't worry ! I'm an intelligently programmed for people in problems likes of you :))")
+    for i in range(6):
+        HdeprQ()
+        # best way to cure depression is cure depression is express yourself
+        s = str(input())
+
+    print("Hmmm... I get everything now ... I've something for you...")
+    wb.open(DeprssionRedirect())
 
 
-    
-
-def depressionEnq():
+def HdeprQ():
     depr = [
         "How is your day going?",
         "How have you been?",
@@ -98,15 +105,15 @@ def depressionEnq():
         "Are you exercising daily ?".
         "Are you capable of enjoying things right now ?",
         "Is it hard for you to do personal grooming ?",
-        "Are you having thoughts of your own death ?",
+        "Are you having thoughts of your own death ?"
     ]
 
-    que = random.choice(depr)
-    return que
+    lnk = random.choice(depr)
+    return lnk
 
 
 # a list of links to articles/videos/music/TED talks to cure depression
-def direct2web():
+def DeprssionRedirect():
     res = ["https://www.youtube.com/watch?v=x_LqnfosZgw",
            "https://www.youtube.com/watch?v=wA-DC6Bwric",
             "https://www.youtube.com/watch?v=XCxHsgKY03I",
