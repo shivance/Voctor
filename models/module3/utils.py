@@ -15,9 +15,6 @@ def welcome():
         "How are you feeling?",
         "How are you?",
         "How are you doing today?",
-
-        "Is it hard for you to do personal grooming ?",
-        "Are you having thoughts of your own death ?",
     ]
 
     wlcm = ((random.choice(greetings)) + " " + (random.choice(inquires)))
@@ -30,6 +27,32 @@ def welcome():
 # if you get a positive reply then go to physical problems webbie
 # else go ahead and execute mental functions below
 
+def positiveReply():
+    ls = ["Great!",
+    "Whoa !",
+    "Badhiya...",
+    "Good to hear !",
+    "Wonderful",
+    "Awesome."
+    ]
+
+    return random.choice(ls)
+
+
+def neutralReply():
+    ls = ["Ohh", "Accha","Hmmm...","Okay ","ok"]
+    return random.choice(ls)
+
+def negativeReply():
+    ls = ["Take care !",
+        "Don't push yourself too hard",
+        "Hey ! Hey ! just don't be too careless ... Trust me ! It'll affect you...Life is not about stopping"
+        "That's too bad",
+        "It's okay ",
+        I'm sorry"
+        "That's okay we all have days like that"
+        ]
+    return random.choice(ls)
 
 def phyVsmental():
     ques = ["Are you having physical symptoms like headache , insomnia or digestive issues ? ",
@@ -59,6 +82,8 @@ def depressionEnq():
         "Are you eating more or less than you normally do?",
         "Are you exercising daily ?".
         "Are you capable of enjoying things right now ?",
+        "Is it hard for you to do personal grooming ?",
+        "Are you having thoughts of your own death ?",
     ]
 
     que = random.choice(depr)
@@ -96,7 +121,7 @@ def direct2web():
     lnk = random.choice(res)
     return lnk
 
-def re():
+def respond():
     reprompts = ["Are you still there?",
     "Hello?",
     "Did you leave ?",
