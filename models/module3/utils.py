@@ -61,33 +61,50 @@ def depressionEnq():
         "Are you capable of enjoying things right now ?",
     ]
 
+    que = random.choice(depr)
+    return que
+
 
 # a list of links to articles/videos/music/TED talks to cure depression
-res = ["https://www.youtube.com/watch?v=x_LqnfosZgw",
-       "https://www.youtube.com/watch?v=wA-DC6Bwric",
-       "https://www.youtube.com/watch?v=XCxHsgKY03I",
-       "https://www.youtube.com/watch?v=Rv9SwZWVkOs",
-       "https://www.youtube.com/watch?v=IDPDEKtd2yM",
-       "https://www.youtube.com/watch?v=t9fP_b8Ebow",
-       "https://www.youtube.com/watch?v=Fo3e_0ITVjo",
-       "https://www.youtube.com/watch?v=MdZAMSyn_As",
-       "https://www.youtube.com/watch?v=g6TUZm5wzLs",
-       "https://www.youtube.com/watch?v=xbagFzcyNiM",
-       "https://www.youtube.com/watch?v=iPGd6l76l9A",
-       "https://www.youtube.com/watch?v = mMYhgTgE6MU",
-       "https://www.youtube.com/watch?v=BZ-LI68xS8g",
-       "https://www.youtube.com/watch?v=bC0hlK7WGcM",
-       "https://www.youtube.com/watch?v=TQMbvJNRpLE",
-       "https://www.youtube.com/watch?v=9vJRopau0g0",
-       "https://www.youtube.com/watch?v=9UotQ5T-f1o",
-       "https://www.youtube.com/watch?v=_8sOFxZsNZM",
-       "https://www.youtube.com/watch?v=Cp99EErJT-I",
-       "https://www.youtube.com/watch?v=MJH0C1Owb6M",
-       "https://www.youtube.com/watch?v=e5_61YEI5KI",
-       "https://medium.com/mind-cafe/everything-you-need-to-know-about-depression-e1627c11810b",
-       "https://medium.com/in-fitness-and-in-health/4-powerful-ways-to-increase-your-rem-sleep-6cbb067a459f",
-       "https://medium.com/just-jordin/the-price-we-pay-to-fit-in-8d35aecb0d53",
-       "https://medium.com/the-ascent/5-proven-strategies-to-self-manage-your-psychological-wellness-96941cf083ff",
-       
+def direct2web():
+    res = ["https://www.youtube.com/watch?v=x_LqnfosZgw",
+           "https://www.youtube.com/watch?v=wA-DC6Bwric",
+            "https://www.youtube.com/watch?v=XCxHsgKY03I",
+            "https://www.youtube.com/watch?v=Rv9SwZWVkOs",
+            "https://www.youtube.com/watch?v=IDPDEKtd2yM",
+            "https://www.youtube.com/watch?v=t9fP_b8Ebow",
+            "https://www.youtube.com/watch?v=Fo3e_0ITVjo",
+            "https://www.youtube.com/watch?v=MdZAMSyn_As",
+            "https://www.youtube.com/watch?v=g6TUZm5wzLs",
+            "https://www.youtube.com/watch?v=xbagFzcyNiM",
+            "https://www.youtube.com/watch?v=iPGd6l76l9A",
+            "https://www.youtube.com/watch?v = mMYhgTgE6MU",
+            "https://www.youtube.com/watch?v=BZ-LI68xS8g",
+            "https://www.youtube.com/watch?v=bC0hlK7WGcM",
+            "https://www.youtube.com/watch?v=TQMbvJNRpLE",
+            "https://www.youtube.com/watch?v=9vJRopau0g0",
+            "https://www.youtube.com/watch?v=9UotQ5T-f1o",
+            "https://www.youtube.com/watch?v=_8sOFxZsNZM",
+            "https://www.youtube.com/watch?v=Cp99EErJT-I",
+            "https://www.youtube.com/watch?v=MJH0C1Owb6M",
+            "https://www.youtube.com/watch?v=e5_61YEI5KI",
+            "https://medium.com/mind-cafe/everything-you-need-to-know-about-depression-e1627c11810b",
+            "https://medium.com/in-fitness-and-in-health/4-powerful-ways-to-increase-your-rem-sleep-6cbb067a459f",
+            "https://medium.com/just-jordin/the-price-we-pay-to-fit-in-8d35aecb0d53",
+            "https://medium.com/the-ascent/5-proven-strategies-to-self-manage-your-psychological-wellness-96941cf083ff"
+        ]
+    lnk = random.choice(res)
+    return lnk
 
-       ]
+def re():
+    reprompts = ["Are you still there?",
+    "Hello?",
+    "Did you leave ?",
+    "Did you still want me to check in on you ?",
+    "Are you there ?"
+    ]
+
+    help_message = "Type 'Yo' if you are resuming..."
+    #print ((random.choice(reprompts))+(help_message))
+    return ((random.choice(reprompts))+(help_message))
+
