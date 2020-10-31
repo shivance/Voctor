@@ -13,9 +13,17 @@
 	- _Anshuman Mishra_
 	- _Mohd Sufiyan Ansari_
 
+#### Currently working on 
+
+_Anshuman_ - a doctor assigner based on a general [database]("./models/module1/db_dctr.csv") -- decision tree
+
+
+
+
 ```python
 from life import time
 
 while time.limit != 'END':
 	print('Hack @ VersionBeta3.0')
 ```
+
