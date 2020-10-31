@@ -6,6 +6,8 @@
 - **Technologies/Platforms Used**
 	- _Tensorflow_
 	- _Tensorflow Serving API_
+	- _Scikitlearn_
+	- _NLTK_
 	- _Using ***Backend*** as Django Framework_
 	- _Front end using HTML/CSS/BS4_
 
