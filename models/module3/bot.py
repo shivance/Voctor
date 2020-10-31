@@ -32,4 +32,4 @@ def continue_session():
     if (c_neg>=4):
         li8_depr()
     else:
-        print("Okay ! you seem to be fine ... Focus on your work , okay ? Sleep properly and Take rest properly..Bye ,,")
+        print("Okay ! you seem to be fine ... Focus on your work , okay ? Sleep properly and Take rest properly..Bye...")
