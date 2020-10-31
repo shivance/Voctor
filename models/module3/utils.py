@@ -73,6 +73,16 @@ def phyVsmental():
     else:
         depressionEnq()
 
+def normalQue():
+    ls = [
+        "What do you like to do on weekends?",
+
+    ]
+
+def li8_depr():
+
+
+    
 
 def depressionEnq():
     depr = [
@@ -134,7 +144,7 @@ def respond():
     "Are you there ?"
     ]
 
-    help_message = "Type 'Yo' if you are resuming..."
+    help_message = "Type 'yepp' if you are resuming..."
     #print ((random.choice(reprompts))+(help_message))
-    return ((random.choice(reprompts))+(help_message))
 
+    return ((random.choice(reprompts))+(help_message))
