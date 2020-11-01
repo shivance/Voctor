@@ -17,10 +17,8 @@ def welcome():
         "How are you doing today?",
     ]
 
-    wlcm = ((random.choice(greetings)) + " " + (random.choice(inquires)))
-
-    print(wlcm)
-
+    wlcm = ((random.choice(greet_msg)) + " " + (random.choice(inquires)))
+    print("\n\n")
     return wlcm
 
 # This function will be responsible for physical vs mental care
@@ -33,11 +31,11 @@ def phyVsmental():
             "Are you suffering from fever ?",
             "Are you facing any physical difficulty ?"
             ]
-
-    s = str(input())
+    print(random.choice(ques))
     print("Reply with Yes or no :) ")
+    s = str(input())
     s = s.lower()
-    if (s == "yes")
+    if (s == "yes"):
         print(negativeReply()+" Don't worry ! You've got me ... just hang in there...")
         #redirect to virtual health examiner
         #wb.open("")
@@ -91,10 +89,10 @@ def music_res():
     return random.choice(ls)
 
 def music_enq():
-    print("Do you like music ?")
+    print("Do you like music ? Your mood looks low today ...What about some music ..")
     s = str(input())
-    if (sentiment(s)>=0)
-        print(positiveReply())
+    if (sentiment(s)>=0):
+        print(positiveReply()+ " Check this out ... ")
         print()
         wb.open(music_res())
     else:
@@ -103,16 +101,17 @@ def music_enq():
         print(normalQue)
         print(positiveReply())
         print()
+        
         relationship()
         dprsnActive()
 
 def relationship():
     print("Are you in relationship ? Yes or no ;) ")
     s = str(input())
-    if (s.lower()=="yes")
+    if (s.lower()=="yes"):
         print(rel_ls())
         s = str(input())
-        if(sentiment(s)<0)
+        if (s=="yes"):
             wb.open(rel_redirect())
 
 
@@ -152,10 +151,8 @@ def motivate2talk():
 
 def dprsnActive():
     
-    for i in range(6):
-        HdeprQ()
-        print()
-        print(motivate2talk())
+    for i in range(3):
+        print(HdeprQ())
         # best way to cure depression is cure depression is express yourself
         s = str(input())
 
@@ -171,10 +168,10 @@ def HdeprQ():
         "How have you been today?",
         "How have you been feeling today?",
         "Are you tasting food you eat ?",
-        "Are you sleeping more or less than you normally do?".
+        "Are you sleeping more or less than you normally do?",
         "Do you feel tired no more how you sleep ?",
         "Are you eating more or less than you normally do?",
-        "Are you exercising daily ?".
+        "Are you exercising daily ?",
         "Are you capable of enjoying things right now ?",
         "Is it hard for you to do personal grooming ?",
     ]
