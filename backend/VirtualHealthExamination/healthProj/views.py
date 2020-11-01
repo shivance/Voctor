@@ -7,6 +7,16 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 
+upload_msg = '''
+We have received your email.
+We will scan it and send you the details on this email shortly.
+Thank You for using our portal.
+Have a nice day Sir/Mam.
+
+Virtual Health Examiner
+Copyright 2020
+'''
+
 # Create your views here.
 def index(request):
     return render(request,'healthProj/index.html',{})
@@ -47,6 +57,12 @@ def upload(request):
         print(uploaded_file.name)
         print(uploaded_file.size)
         messages.success(request,('File successfully uploaded'))
+        send_mail(
+			'Request Received',
+			upload_msg,
+			settings.EMAIL_HOST_USER,
+			[request.user.email]
+		)
         return redirect('upload')
     
     return render(request,'healthProj/upload.html',{})
