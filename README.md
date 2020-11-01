@@ -13,15 +13,17 @@
 
 - **Structure of Project**
 	- Healthcare Chatbot (Top level) 
-		- controls
+		- controls following webapp:
 			- Features by WebApp
 				- Recommends Doctor
 				- Make Appointments (User defined and system defined)
 				- Sends Mail Regarding The Requests and Responses
 				- Authencity Restrictions
 		- Models Used
-				- Covid Detection using X-ray
-				- Recommendation System
+				
+			- Covid Detection using X-ray
+				
+			- Recommendation System
 
 - **Contributors**
 	- _Anshuman Mishra_
