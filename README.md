@@ -12,15 +12,16 @@
 	- _Front end using HTML/CSS/BS4_
 
 - **Structure of Project**
-	- Features by WebApp
-		- Recommends Doctor
-		- Make Appointments (User defined and system defined)
-		- Sends Mail Regarding The Requests and Responses
-		- Authencity Restrictions
-	- Models Used
-		- Healthcare Chatbot
-		- Covid Detection using X-ray
-		- Recommendation System
+	- Healthcare Chatbot (Top level) 
+		- controls
+			- Features by WebApp
+				- Recommends Doctor
+				- Make Appointments (User defined and system defined)
+				- Sends Mail Regarding The Requests and Responses
+				- Authencity Restrictions
+		- Models Used
+				- Covid Detection using X-ray
+				- Recommendation System
 
 - **Contributors**
 	- _Anshuman Mishra_
