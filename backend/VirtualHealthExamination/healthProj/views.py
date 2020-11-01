@@ -4,7 +4,6 @@ from .dataset import doctor_data_set
 from random import choice
 from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
-from .models import UserData
 
 # Create your views here.
 def index(request):
@@ -46,6 +45,6 @@ def upload(request):
         print(uploaded_file.name)
         print(uploaded_file.size)
         messages.success(request,('File successfully uploaded'))
-        return redirect('upload',kwargs={'loader':'sufiyan'})
-    form = UserData()
-    return render(request,'healthProj/upload.html',{'form':form})
+        return redirect('upload')
+    
+    return render(request,'healthProj/upload.html',{})

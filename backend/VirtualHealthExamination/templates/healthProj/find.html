@@ -1,4 +1,4 @@
-{% extends 'baseM.html' %} {% block content %}
+{% extends 'baseM.html' %} {% block title %} Find Doctor {% endblock title %} {% block content %}
 <div class="container">
     <form class="form" action="{% url 'doctors' %}">
         {% csrf_token %}
