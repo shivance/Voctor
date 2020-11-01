@@ -17,7 +17,6 @@ c_neu = 0
 
 def continue_session():
     phyVsmental()
-
     for i in range(2):
         normalQue()
         reply = str(input())
