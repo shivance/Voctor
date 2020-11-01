@@ -26,7 +26,7 @@
             <td colspan="2">1</td>
             <td>{{name}}</td>
             <td><a href="{{profile}}" class="btn btn-success" target="_blank">Click Here</a></td>
-            <td><a href="appointment/{{email}}" class="badge badge-pill badge-warning">Book Here!</a></td>
+            <td><a href="{% url 'appointment' email %}" class="badge badge-pill badge-warning">Book Here!</a></td>
         </tr>
         {% endif %}
         <!-- Doctors Data -->
@@ -38,7 +38,7 @@
             {% elif forloop.counter == 2 %}
             <td><a href="{{value}}" class="btn btn-secondary" target="_blank">Click Here</a></td>
             {% else %}
-            <td><a href="appointment/{{value}}" class="badge badge-pill badge-warning">Book Here!</a></td>
+            <td><a href="{% url 'appointment' value %}" class="badge badge-pill badge-warning">Book Here!</a></td>
             {% endif %} {% endfor %}
 
         </tr>

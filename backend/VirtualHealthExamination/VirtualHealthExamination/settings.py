@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'VirtualHealthExamination.urls'
@@ -134,6 +138,8 @@ LOGOUT_REDIRECT_URL = 'index'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Email Setting
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
@@ -141,3 +147,5 @@ EMAIL_HOST_USER = 'nozariyo@gmail.com' #enter your email here
 EMAIL_HOST_PASSWORD = 'AbCd1303' # enter your password here
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = False
+
+django_heroku.settings(locals())

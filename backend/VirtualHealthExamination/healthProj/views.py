@@ -40,7 +40,8 @@ def doctors(request):
         context.update(choice(doctors))
         print(context)
         return render(request,'healthProj/doctors.html',context)
-    
+
+@login_required    
 def fullList(request,specialisation):
     sp = specialisation
     print(sp)
