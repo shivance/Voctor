@@ -7,20 +7,18 @@
                 <h3>Recommended For You.</h3>
             </td>
         </tr>
-
         {% else %}
         <tr>
             <td colspan="4">
                 <h3>Specialization : {{special}}</h3>
             </td>
         </tr>
-
         {% endif %}
-
         <tr>
             <th colspan="2">S. No.</th>
             <th>Name Of Doctor</th>
             <th>Visit Their Profile</th>
+            <th>Make Appointment</th>
         </tr>
         <!-- Single Doctor Data -->
         {% if name %}
@@ -28,6 +26,7 @@
             <td colspan="2">1</td>
             <td>{{name}}</td>
             <td><a href="{{profile}}" class="btn btn-success" target="_blank">Click Here</a></td>
+            <td><a href="appointment/{{email}}">Book Here!</a></td>
         </tr>
         {% endif %}
         <!-- Doctors Data -->
@@ -36,8 +35,10 @@
             <td colspan="2">{{forloop.counter}}</td>
             {% for key,value in doctor.items %} {% if forloop.counter == 1 %}
             <td>{{value}}</td>
-            {% else %}
+            {% elif forloop.counter == 2 %}
             <td><a href="{{value}}" class="btn btn-secondary" target="_blank">Click Here</a></td>
+            {% else %}
+            <td><a href="appointment/{{value}}">Book Here!</a></td>
             {% endif %} {% endfor %}
 
         </tr>

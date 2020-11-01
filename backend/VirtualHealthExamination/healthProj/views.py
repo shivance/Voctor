@@ -4,6 +4,8 @@ from .dataset import doctor_data_set
 from random import choice
 from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
 def index(request):
@@ -48,3 +50,25 @@ def upload(request):
         return redirect('upload')
     
     return render(request,'healthProj/upload.html',{})
+
+@login_required
+def appointment(request,email):
+    if request.method == "POST":
+        print('Sufiyan')
+        message_name = request.POST.get('message_name')
+        message_email = request.POST.get('message_email')
+        message = request.POST['message']     
+        #sending email
+        send_mail(
+			'Message From '+message_name,
+			message,
+			settings.EMAIL_HOST_USER,
+			[message_email]
+		)
+        
+        return render(request,'healthProj/appointment.html',{'message_name':message_name})
+    email_id = email
+    fill = False
+    if '@' in email and ('.in' in email or '.com' in email):
+        fill = True
+    return render(request,'healthProj/appointment.html',{'email':email_id,'fill':fill})

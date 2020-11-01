@@ -1,1 +1,36 @@
-{% extends 'baseM.html' %} {% block title %} Appointment {% endblock title %} {% block content %} {% endblock content %}
+{% extends 'baseM.html' %} {% block title %} Appointment {% endblock title %} {% block content %}
+<div class="container">
+
+    {% if message_name %}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Your Request Sent!</strong> We will get back to you soon Mir/Miss {{message_name}}.
+    </div>
+    {% endif %}
+
+    <div class="col-6 text-light mt-5 mb-4">
+        <h3>
+            <p class=" badge badge-pill bagde-danger"><i class="fa fa-user mr-2"></i></p>Hello {{user.username}}</h3>
+
+        <span style="font-size: 20px;">{% if fill %} Make Your Appointment Now. {% else %} Have email id of your doctor? Book your appointment directly. {% endif %}</span>
+
+    </div>
+    <form method="POST" class="col-lg-6">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-lg-6">
+                <input type="text" name="message_name" class="form-control mb-30" placeholder="Your Name" required>
+            </div>
+            <div class="col-lg-6">
+                <input type="email" name="message_email" class="form-control mb-30" {% if fill %} value="{{email}}" disabled {% else %} placeholder="Your Doctor's Email" {% endif %} required>
+            </div>
+            <div class="col-12 mt-2">
+                <textarea name="message" class="form-control mb-30" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="col-12 mt-2">
+                <input type="submit" class="btn btn-warning " value="Make Appointment">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
