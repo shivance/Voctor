@@ -27,6 +27,23 @@ def welcome():
 # if you get a positive reply then go to physical problems webbie
 # else go ahead and execute mental functions below
 
+def phyVsmental():
+    ques = ["Are you having physical symptoms like headache , insomnia or digestive issues ? ",
+            "Have you caught cold ?",
+            "Are you suffering from fever ?",
+            "Are you facing any physical difficulty ?"
+            ]
+
+    s = str(input())
+    print("Reply with Yes or no :) ")
+    s = s.lower()
+    if (s == "yes")
+        print(negativeReply()+" Don't worry ! You've got me ... just hang in there...")
+        #redirect to virtual health examiner
+        #wb.open("")
+
+
+
 def positiveReply():
     ls = ["Great!",
     "Whoa !",
@@ -54,36 +71,91 @@ def negativeReply():
         "Hey ! Hey ! just don't be too careless ... Trust me ! It'll affect you...Life is not about stopping"
         "That's too bad",
         "It's okay ",
-        I'm sorry"
+        "I'm sorry"
         "That's okay we all have days like that"
         ]
     return random.choice(ls)
 
-def phyVsmental():
-    ques = ["Are you having physical symptoms like headache , insomnia or digestive issues ? ",
-            "Have you caught cold ?",
-            "Are you suffering from fever ?"
-            ]
+def music_res():
+    ls = [
+        "https://open.spotify.com/playlist/1wHNpiNzLhIMWUw1fl8wI0?si=iqapMTIPT1atrHF3B2edOg",
+        "https://open.spotify.com/playlist/4FVHO7ro7mm2NcpHbSYWiH?si=b8lERxPqTnO3hck0wUuY0g",
+        "https://open.spotify.com/playlist/5W3MXVdsVNEkAqYYzoAVwt?si=uyssBhcpS4yhK_bcIezW8g",
+        "https://open.spotify.com/playlist/27W3WFEhHsrNCrb0y79fPo?si=QZeT9yFuTU2QFr7znLJtQQ",
+        "https://open.spotify.com/playlist/6vHhQOHGABPPMcLumvTBpN?si=_3rXqy9dTJGMuxnF9XtLJQ",
+        "https://open.spotify.com/playlist/2rN3mSrzUcgjlj1TcEDTX7?si=K9sDp-KPTs-iLLfEqU_kNw",
+        "https://open.spotify.com/playlist/4gHPH0i2mD00zgEmWxONn4?si=T2B_CRi7REGjqr-L4ufAtA",
+        "https://open.spotify.com/playlist/5Qvz8wZIRYbEUUFoPueKI5?si=Uv7e-zjnTV-AXhuU1YxnzQ"
+    ]
 
+    return random.choice(ls)
+
+def music_enq():
+    print("Do you like music ?")
     s = str(input())
-    print("Reply with Yes or no :) ")
-    s = s.lower()
-    if (s == "yes")
-        #redirect to virtual health examiner
-        #wb.open("")
-    
+    if (sentiment(s)>=0)
+        print(positiveReply())
+        print()
+        wb.open(music_res())
+    else:
+        print(neutralReply())
+        print()
+        print(normalQue)
+        print(positiveReply())
+        print()
+        relationship()
+        dprsnActive()
+
+def relationship():
+    print("Are you in relationship ? Yes or no ;) ")
+    s = str(input())
+    if (s.lower()=="yes")
+        print(rel_ls())
+        s = str(input())
+        if(sentiment(s)<0)
+            wb.open(rel_redirect())
+
+
+def rel_ls():
+    ls = [
+        "Had trouble in relationship ?",
+        "Are you tensed coz of ur partner ?",
+        "Are you able to balance your goals along with relationship ?"
+    ]
+    return (random.choice(ls))
+
+def rel_redirect():
+    ls =[
+        "https://angrytherapist.medium.com/this-is-what-a-healthy-relationship-looks-like-8b8b2858e7a8",
+        "https://medium.com/@antonchevalier/6-healthy-relationship-habits-that-might-surprise-you-ee6b02e94",
+        "https://medium.com/@amyjmcdonnell/6-signs-youre-in-a-healthy-relationship-e86b8cd0452b",
+        "https://medium.com/@whitneyvmorgan/healthy-relationships-have-these-two-things-a97a49327dd4"
+    ]
+    return (random.choice(ls))
 
 def normalQue():
     ls = [
         "What do you like to do on weekends?",
         "Had lunch ?"
     ]
+    return (random.choice(ls))
+
+def motivate2talk():
+    ls = [
+        "You can talk don't worry !",
+        "It's okay ...tell me !",
+        "Don't worry ... talk to me !",
+        "What's up ?"
+    ]
+    return (random.choice(ls))
 
 
 def dprsnActive():
-    print("You can talk don't worry ! I'm an intelligently programmed for people in problems likes of you :))")
+    
     for i in range(6):
         HdeprQ()
+        print()
+        print(motivate2talk())
         # best way to cure depression is cure depression is express yourself
         s = str(input())
 
@@ -105,7 +177,6 @@ def HdeprQ():
         "Are you exercising daily ?".
         "Are you capable of enjoying things right now ?",
         "Is it hard for you to do personal grooming ?",
-        "Are you having thoughts of your own death ?"
     ]
 
     lnk = random.choice(depr)
