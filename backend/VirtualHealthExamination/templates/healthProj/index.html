@@ -2,6 +2,14 @@
 
 <div class="container">
     <div class="row d-flex justify-content-center mt-5">
+
+        {% if user.is_authenticated %}
+        <h4 class="text-light">Welcome {{ user.username|title }}, You can avail these services</h4>
+        {% else %}
+        <h5 class="text-light">Please Login to Avail these services.</h5>
+        {% endif %}
+    </div>
+    <div class="row d-flex justify-content-center mt-5">
         <div class="card-deck col-8">
             <div class="card bg-light">
                 <div class="card-header bg-dark text-light">
@@ -11,7 +19,7 @@
                     <p class="card-text">
                         Here You can Upload your X-ray image to get yourself e-consultance and idea about your condition.
                     </p>
-                    <a class="card-text btn btn-success">Upload Now!</a>
+                    <a class="card-text btn btn-success" href="{% url 'upload' %}">Upload Now!</a>
                 </div>
             </div>
             <div class="card bg-light">
@@ -22,7 +30,7 @@
                     <p class="card-text">
                         Want to talk to a doctor nearby? Make your appointment now.
                     </p>
-                    <a class="card-text btn btn-success">Find Doctor!</a>
+                    <a href="{% url 'find' %}" class="card-text btn btn-success">Find Doctor!</a>
                 </div>
             </div>
         </div>
@@ -49,48 +57,6 @@
             </div>
         </div>
     </div>
-</div>
-<hr>
-<hr>
-<hr>
-<div class="bg-dark mt-5">
-    <footer class="page-footer font-small blue pt-4 text-light">
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="text-uppercase">An Online Help System</h5>
-                    <p>Project Maintained for Version Beta 3.0 2020-2021</p>
-                </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">MEMBERS (GITHUB)</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="https://github.com/shivanshuman021" target="_blank" class="text-light">Anshuman Mishra</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/suffisme" target="_blank" class="text-light">Mohd Sufiyan Ansari</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Mail Us</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="mailto:shivanshuman021@gmail.com" class=" text-light "><i class="fas fa-envelope mr-2"></i>Anshuman Mishra</a>
-                        </li>
-                        <li>
-                            <a href="mailto:addsufiyan@gmail.com" class=" text-light "><i class="fas fa-envelope mr-2"></i>Mohd Sufiyan Ansari</a>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <p> Sufiyan Ansari & Anshuman Mishra</p>
-        </div>
-    </footer>
 </div>
 {% endblock %}
 

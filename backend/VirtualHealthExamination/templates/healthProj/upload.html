@@ -1,1 +1,21 @@
-{% extends 'baseM.html' %} {% block content %} {% endblock content %}
+{% extends 'baseM.html' %} {% block content %}
+<div class="container">
+    {% if messages %} {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %} {% endif %}
+
+    <form class="form m-5 text-light" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="document" required>
+        <input type="submit" value="upload">
+    </form>
+
+    <br>
+    <br>
+    <br> {% if loader %} {{loader}} {% endif %}
+
+    <br>
+    <br>
+
+</div>
+{% endblock content %}

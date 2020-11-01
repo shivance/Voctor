@@ -1,1 +1,17 @@
-{% extends 'baseM.html' %} {% block content %} {% endblock content %}
+{% extends 'baseM.html' %} {% block content %}
+<div class="container">
+    <form class="form" action="{% url 'doctors' %}">
+        {% csrf_token %}
+        <h5 class="text-light mt-5">Find Your Doctor:</h5>
+        <div class="text-light">
+            <input type="radio" id="op1" name="doctor" value="Homoeopath"> <label for="op1">Homoeopath</label> <br>
+            <input type="radio" id="op2" name="doctor" value="ENT"> <label for="op2">ENT</label> <br>
+            <input type="radio" id="op3" name="doctor" value="Ayurveda"> <label for="op3">Ayurveda</label> <br>
+            <input type="radio" id="op4" name="doctor" value="Dermatologist"> <label for="op4">Dermatologist</label> <br>
+            <input type="radio" id="op5" name="doctor" value="Gynecologist/Obstetrician"> <label for="op5">Gynecologist/Obstetrician</label> <br>
+            <input type="submit" value="Find Doctor">
+        </div>
+    </form>
+</div>
+{% endblock content %}
+<!-- Homoeopath : Dr. Mansi Arya ENT : Dr. Vidit Tripathi Ayurveda : Dr. Vijay Abbot Dermatologist : Dr. Shruti Gupta Gynecologist/Obstetrician : Dr. Gayatri Bala Juneja -->
