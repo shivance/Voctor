@@ -38,7 +38,6 @@ def doctors(request):
             button = False
         context = {'special':special, 'button' : button}
         context.update(choice(doctors))
-        print(context)
         return render(request,'healthProj/doctors.html',context)
 
 @login_required    
@@ -75,9 +74,10 @@ def appointment(request,email):
         message_name = request.POST.get('message_name')
         message_email = request.POST.get('message_email')
         message = request.POST['message']     
-        #sending email
+        # sending email to user
+        print('mail')
         send_mail(
-			'Message From '+message_name,
+			'Message From '+ message_name,
 			message,
 			settings.EMAIL_HOST_USER,
 			[message_email]
