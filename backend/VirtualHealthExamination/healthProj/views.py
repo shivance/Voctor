@@ -6,16 +6,19 @@ from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+import os
 
-upload_msg = '''
-We have received your email.
-We will scan it and send you the details on this email shortly.
-Thank You for using our portal.
-Have a nice day Sir/Mam.
-
-Virtual Health Examiner
-Copyright 2020
-'''
+def upload_msg(msg):
+    return '''
+    We have received your request.
+    We are done scanning it.
+    Thank You for using our portal.
+    Please Take Care.
+    
+    The probability of You being CORONA affected is :''' + msg + '''
+    Virtual Health Examiner
+    Copyright 2020
+    ''' 
 
 # Create your views here.
 def index(request):
@@ -51,15 +54,17 @@ def fullList(request,specialisation):
 @login_required
 def upload(request):
     if request.method=='POST':
+        from . import xray as XX
         uploaded_file = request.FILES['document']
         fs=FileSystemStorage()
         fs.save(uploaded_file.name,uploaded_file)
         print(uploaded_file.name)
         print(uploaded_file.size)
-        messages.success(request,('File successfully uploaded'))
+        messages.success(request,('File successfully uploaded.'))# + str(XX.predict(os.path.join(settings.MEDIA_ROOT,str(uploaded_file.name))))))
+        print(XX.predict(os.path.join(settings.MEDIA_ROOT,str(uploaded_file.name))))
         send_mail(
 			'Request Received',
-			upload_msg,
+			upload_msg(str(XX.predict(os.path.join(settings.MEDIA_ROOT,str(uploaded_file.name))))),
 			settings.EMAIL_HOST_USER,
 			[request.user.email]
 		)

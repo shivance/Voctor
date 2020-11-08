@@ -4,10 +4,10 @@
     <div class="alert alert-success alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button>{{message}}.
     </div>
+    {% endfor %}
     <div class="alert alert-primary alert-dismissible">
         <button type="button" class="close" data-dismiss="alert">&times;</button> We have received your file. The Report will sent to your mail shortly.
-    </div>
-    {% endfor %} {% endif %}
+    </div>{% endif %}
 
     <form class="form m-5 text-light p-4 rounded border border-secondary" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
@@ -21,7 +21,7 @@
     <div class="col-5 text-light">
         <p class="col">
             <li>Upload Your X-ray Images Here!</li>
-            <li>Use our System to scan it and tell your about the condition.</li>
+            <li>Use our System to scan it and tell about the condition.</li>
             <li>Your File is secures here.</li>
             <li>Have a nice day.</li>
         </p>
