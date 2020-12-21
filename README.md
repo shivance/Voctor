@@ -1,5 +1,6 @@
 # Voctor 1.0
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 - **Problem Statement Selected**
 	- 01.Mental Health monitoring system
 
